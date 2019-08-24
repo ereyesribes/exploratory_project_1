@@ -1,8 +1,8 @@
 library(dplyr)
 
-# Fetch sources whose short names contain "coal".
+# Fetch sources whose sector matches "fuel combustion + coal"
 sources <- readRDS('data/Source_Classification_Code.rds')
-coal_related <- sources %>% filter(grepl("coal", Short.Name, ignore.case = T))
+coal_related <- sources %>% filter(grepl("Fuel Comb.*Coal", EI.Sector, ignore.case = T))
 
 
 
